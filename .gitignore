@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+Bootloader/pico_sdk_import.cmake
+Bootloader/build

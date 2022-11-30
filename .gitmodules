@@ -1,0 +1,3 @@
+[submodule "Bootloader/lib/pico-sdk"]
+	path = Bootloader/lib/pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk.git
