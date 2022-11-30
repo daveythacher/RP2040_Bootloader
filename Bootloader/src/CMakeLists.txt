@@ -4,7 +4,7 @@ add_executable(bootloader
     Interface/UART.cpp)
         
 target_compile_definitions(bootloader PUBLIC
-	PICO_HEAP_SIZE=2048
+	PICO_HEAP_SIZE=65536
 	PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64
 )
 
@@ -39,4 +39,5 @@ pico_add_dis_output2(bootloader)
 
 # pull in dependencies
 target_link_libraries(bootloader 
-	pico_stdlib)
+	pico_stdlib
+    pico_time)

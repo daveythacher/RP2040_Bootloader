@@ -4,18 +4,18 @@ UART::UART() : Interface() {
 
 }
 
-bool UART::enter() {
+// TODO
+bool UART::enter(uint32_t *adr) {
+    address = adr;
     return false;
 }
 
-int UART::read(uint8_t *buffer, uint16_t len) {
-    return 0;
+// TODO
+bool UART::can_read() {
+    return false;
 }
 
+// TODO
 void UART::ack() {
-
-}
-
-void UART::nack() {
 
 }

@@ -10,10 +10,15 @@ class Interface {
 
         static Interface *create();
 
-        virtual bool enter() = 0;
-        virtual int read(uint8_t *buffer, uint16_t len) = 0;
+        virtual void process();
+        virtual bool enter(uint32_t *address) = 0;
+    
+    protected:
+        virtual bool can_read() = 0;
         virtual void ack() = 0;
-        virtual void nack() = 0;
+
+        uint8_t buf[32768];
+        uint32_t *address;
 };
 
 #endif

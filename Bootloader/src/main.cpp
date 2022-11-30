@@ -1,4 +1,5 @@
 #include <inttypes.h>
+#include "pico/time.h"
 #include "Interface.h"
 
 static void  __attribute__((naked)) start_app(uint32_t pc, uint32_t sp) {
@@ -12,18 +13,13 @@ int main() {
   uint32_t *app_code = (uint32_t *) (0x10000000 + 32768);
   uint32_t app_sp = app_code[0];
   uint32_t app_start = app_code[1];
-  bool has_timed_out = false;
   Interface *i = Interface::create();
 
-  while (!has_timed_out) {
-    if (0) {    // TODO:
-        // TODO
-        if (i->enter()) {
-          // TODO:
-        }
-    }
-    else
-        has_timed_out = true;
+  for (int x = 0; x < 10; x++) {
+    if (i->enter(app_code))
+      i->process();
+    else 
+      sleep_us(10);
   }
 
   start_app(app_start, app_sp);

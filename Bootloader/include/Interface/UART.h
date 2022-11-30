@@ -7,10 +7,11 @@ class UART : public Interface {
     public:
         UART();
 
-        bool enter();
-        int read(uint8_t *buffer, uint16_t len);
+        bool enter(uint32_t *address);
+
+    protected:
+        bool can_read();
         void ack();
-        void nack();
 };
 
 #endif
