@@ -1,4 +1,5 @@
 # RP2040_Bootloader
+This is meant to be short and sweet. (May be a little dangerous.)
 
 ## Credit
 https://interrupt.memfault.com/blog/how-to-write-a-bootloader-from-scratch
