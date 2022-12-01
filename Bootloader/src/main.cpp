@@ -24,8 +24,10 @@ int main() {
   Interface *i = Interface::create();
 
   for (int x = 0; x < 10; x++) {
-    if (i->enter(app_code))
+    if (i->enter(app_code)) {
       i->process();
+      break;
+    }
     else 
       sleep_us(10);
   }
