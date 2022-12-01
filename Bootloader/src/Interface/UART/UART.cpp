@@ -27,9 +27,13 @@ UART::UART() : Interface() {
 bool UART::enter(uint32_t *adr) {
     address = adr;
 
-    ack();
+    if (gpio_get(28)) {
+        ack();
+        
+        return true;
+    }
 
-    return gpio_get(28);
+    return false;
 }
 
 bool UART::can_read() {
