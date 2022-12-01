@@ -1,7 +1,7 @@
 add_executable(bootloader 
-    main.cpp
-    Interface/Interface.cpp
-    Interface/UART/UART.cpp)
+    main.cpp)
+
+add_subdirectory(Interface)
         
 target_compile_definitions(bootloader PUBLIC
 	PICO_HEAP_SIZE=65536
