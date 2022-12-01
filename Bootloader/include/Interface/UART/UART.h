@@ -15,7 +15,7 @@ class UART : public Interface {
         void ack();
 
     private:
-        static dma_channel_config c;
+        dma_channel_config c;
 };
 
 #endif

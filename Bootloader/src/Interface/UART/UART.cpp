@@ -2,8 +2,6 @@
 #include "hardware/gpio.h"
 #include "hardware/uart.h"
 
-dma_channel_config UART::c;
-
 UART::UART() : Interface() {
     gpio_init(28);
     gpio_set_dir(28, GPIO_IN);
