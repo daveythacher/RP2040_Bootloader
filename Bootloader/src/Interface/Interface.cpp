@@ -27,13 +27,15 @@ void Interface::process() {
         switch(state) {
             case 0:         // Program
                 len = buf[1] + (buf[2] << 8);
+                if (len > (sizeof(buf) - 4))
+                    while (1);  // Error!
                 flash_range_program((uint32_t) address, buf + 4, len);
                 break;
             case 1:         // Exit
                 stop = true;
                 break;
             default:
-                while (1);  // Error!
+                while (1);      // Error!
                 break;
         }
 
