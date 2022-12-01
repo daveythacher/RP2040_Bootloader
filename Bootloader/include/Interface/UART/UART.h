@@ -1,7 +1,7 @@
 #ifndef UART_H
 #define UART_H
 
-#include "Interface.h"
+#include "Interface/Interface.h"
 #include "hardware/dma.h"
 
 class UART : public Interface {

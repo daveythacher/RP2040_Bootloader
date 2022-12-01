@@ -1,6 +1,6 @@
 #include "hardware/flash.h"
-#include "Interface.h"
-#include "Interface/UART.h"
+#include "Interface/Interface.h"
+#include "Interface/UART/UART.h"
 
 Interface::Interface() {
 
