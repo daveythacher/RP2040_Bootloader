@@ -2,6 +2,7 @@
 #define UART_H
 
 #include "Interface.h"
+#include "hardware/dma.h"
 
 class UART : public Interface {
     public:
@@ -12,6 +13,9 @@ class UART : public Interface {
     protected:
         bool can_read();
         void ack();
+
+    private:
+        static dma_channel_config c;
 };
 
 #endif

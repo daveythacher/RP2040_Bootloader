@@ -40,4 +40,7 @@ pico_add_dis_output2(bootloader)
 # pull in dependencies
 target_link_libraries(bootloader 
 	pico_stdlib
-    pico_time)
+    pico_time
+    hardware_gpio
+    hardware_uart
+    hardware_dma)

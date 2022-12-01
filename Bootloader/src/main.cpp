@@ -1,6 +1,14 @@
 #include <inttypes.h>
 #include "pico/time.h"
+#include "hardware/regs/m0plus.h"
 #include "Interface.h"
+
+static void switch_vtor(uint32_t adr) {
+  uint32_t *ptr = (uint32_t *) (PPB_BASE + M0PLUS_VTOR_OFFSET);
+
+  // TODO: disable Interputs?
+  *ptr = adr & 0xFFFFFF00;
+}
 
 static void  __attribute__((naked)) start_app(uint32_t pc, uint32_t sp) {
     __asm("           \n\
@@ -22,6 +30,7 @@ int main() {
       sleep_us(10);
   }
 
+  switch_vtor(app_start);
   start_app(app_start, app_sp);
 
   while (1);

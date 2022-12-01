@@ -23,13 +23,13 @@ void Interface::process() {
         flash_range_erase((uint32_t) address, sizeof(buf));
         while(!can_read());
 
-        uint32_t state = 0;     // TODO:
+        uint32_t state = buf[0];
         switch(state) {
-            case 0:
-                len = 0;        // TODO:
-                flash_range_program((uint32_t) address, buf + 16, len);
+            case 0:         // Program
+                len = buf[1] + (buf[2] << 8);
+                flash_range_program((uint32_t) address, buf + 4, len);
                 break;
-            case 1:
+            case 1:         // Exit
                 stop = true;
                 break;
             default:
