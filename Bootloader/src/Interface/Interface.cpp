@@ -20,7 +20,7 @@ void Interface::process() {
     size_t len = 0;
     
     while (!stop) {
-        flash_range_erase((uint32_t) address, sizeof(buf));
+        flash_range_erase((uint32_t) address, sizeof(buf) - 4);
         while(!can_read());
 
         uint32_t state = buf[0];
@@ -39,7 +39,7 @@ void Interface::process() {
                 break;
         }
 
-        address = address + sizeof(buf);
+        address = address + sizeof(buf) - 4;
         ack();
     }
 }

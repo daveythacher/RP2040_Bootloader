@@ -17,7 +17,7 @@ class Interface {
         virtual bool can_read() = 0;
         virtual void ack() = 0;
 
-        uint8_t buf[32768];
+        uint8_t buf[32768 + 4];
         uint32_t *address;
 };
 
