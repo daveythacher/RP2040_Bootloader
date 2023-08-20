@@ -10,6 +10,7 @@ static void switch_vtor(uint32_t adr) {
   *ptr = adr & 0xFFFFFF00;
 }
 
+// TODO: Replace with watchdog_reboot(pc, sp, 100) ???
 static void  __attribute__((naked)) start_app(uint32_t pc, uint32_t sp) {
     __asm("           \n\
           msr msp, r1 /* load r1 into MSP */\n\
