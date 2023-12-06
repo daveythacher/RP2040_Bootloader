@@ -1,8 +1,9 @@
 #include "hardware/flash.h"
+#include "hardware/watchdog.h"
 #include "Interface/Interface.h"
 
 Interface::Interface() {
-    // TODO: Setup watchdog
+    watchdog_enable(100, false);
 }
 
 Interface::~Interface() {
@@ -36,5 +37,6 @@ void Interface::process() {
 
         address = address + sizeof(buf) - 4;
         ack();
+        watchdog_update();
     }
 }
