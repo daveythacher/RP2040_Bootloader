@@ -9,6 +9,7 @@ Interface::~Interface() {
 
 }
 
+// TODO: Improve (CRC, protocol, etc.)
 void Interface::process() {
     bool stop = false;
     size_t len = 0;
