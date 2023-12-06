@@ -46,3 +46,7 @@ target_link_libraries(bootloader
     hardware_uart
     hardware_dma
     pico_stdio_usb)
+
+target_link_options(bootloader 
+    PRIVATE "LINKER:--print-memory-usage"
+)
