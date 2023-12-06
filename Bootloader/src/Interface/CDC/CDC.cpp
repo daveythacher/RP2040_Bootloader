@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include "Interface/CDC/CDC.h"
 #include "hardware/gpio.h"
-#include "pico/stdio_usb.h"
 
 CDC::CDC() : Interface() {
     gpio_init(28);
     gpio_set_dir(28, GPIO_IN);
     gpio_pull_up(28);
-
-    stdio_usb_init();
 }
 
 bool CDC::enter(uint32_t *adr) {
