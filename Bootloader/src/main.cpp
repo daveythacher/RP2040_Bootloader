@@ -15,7 +15,7 @@ int main() {
   uint32_t *app_code = (uint32_t *) (0x10000000 + (128 * 1024));
   uint32_t app_sp = app_code[0];
   uint32_t app_start = app_code[1];
-  Interface *i = new IMPLEMENTATION();
+  Interface *i = new IMPLEMENTATION();  // Pardon the bad practice?
 
   for (int x = 0; x < 10; x++) {
     if (i->enter(app_code)) {
