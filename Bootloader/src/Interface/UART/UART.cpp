@@ -50,3 +50,7 @@ void UART::ack() {
 
     uart_puts(uart0, "ACK");
 }
+
+void UART::enter() {
+    uart_puts(uart0, "enter");
+}

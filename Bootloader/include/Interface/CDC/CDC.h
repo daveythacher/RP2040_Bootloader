@@ -13,6 +13,7 @@ class CDC : public Interface {
     protected:
         bool can_read();
         void ack();
+        void enter();
 };
 
 #endif

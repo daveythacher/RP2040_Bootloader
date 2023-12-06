@@ -14,6 +14,7 @@ class Interface {
     protected:
         virtual bool can_read() = 0;
         virtual void ack() = 0;
+        virtual void enter() = 0;
 
         uint8_t buf[1024 + 4];
         uint32_t *address;

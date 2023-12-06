@@ -14,6 +14,8 @@ Interface::~Interface() {
 void Interface::process() {
     bool stop = false;
     size_t len = 0;
+
+    enter();
     
     while (!stop) {
         flash_range_erase((uint32_t) address, sizeof(buf) - 4);

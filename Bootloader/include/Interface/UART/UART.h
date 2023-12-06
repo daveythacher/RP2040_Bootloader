@@ -13,6 +13,7 @@ class UART : public Interface {
     protected:
         bool can_read();
         void ack();
+        void enter();
 
     private:
         dma_channel_config c;

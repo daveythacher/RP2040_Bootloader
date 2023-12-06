@@ -39,3 +39,7 @@ bool CDC::can_read() {
 void CDC::ack() {
     printf("ACK");
 }
+
+void CDC::enter() {
+    printf("enter");
+}
