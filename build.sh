@@ -9,5 +9,5 @@ export PICO_SDK_PATH=$PWD/lib/pico-sdk
 mkdir build
 cp lib/pico-sdk/external/pico_sdk_import.cmake .
 cd build
-cmake ..
+cmake .. -DIMPLEMENTATION=CDC
 make -j $(($(nproc) * 2))

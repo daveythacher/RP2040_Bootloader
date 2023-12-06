@@ -1,7 +1,8 @@
 #include <inttypes.h>
 #include "pico/time.h"
 #include "hardware/regs/m0plus.h"
-#include "Interface/Interface.h"
+#include "Interface/UART/UART.h"
+#include "Interface/CDC/CDC.h"
 
 static void  __attribute__((naked)) start_app(uint32_t pc, uint32_t sp) {
     __asm("           \n\
@@ -14,7 +15,7 @@ int main() {
   uint32_t *app_code = (uint32_t *) (0x10000000 + 32768);
   uint32_t app_sp = app_code[0];
   uint32_t app_start = app_code[1];
-  Interface *i = Interface::create();
+  Interface *i = new IMPLEMENTATION();
 
   for (int x = 0; x < 10; x++) {
     if (i->enter(app_code)) {

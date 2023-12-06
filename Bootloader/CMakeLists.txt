@@ -10,5 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 # Initialize the SDK
 pico_sdk_init()
 
+set(IMPLEMENTATION "UART" CACHE STRING "Interface algorithm name")
+
 include_directories(include)
 add_subdirectory(src)

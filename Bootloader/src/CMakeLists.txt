@@ -6,6 +6,7 @@ add_subdirectory(Interface)
 target_compile_definitions(bootloader PUBLIC
 	PICO_HEAP_SIZE=65536
 	PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64
+    IMPLEMENTATION=${IMPLEMENTATION}
 )
 
 target_compile_options(bootloader PUBLIC
@@ -43,4 +44,5 @@ target_link_libraries(bootloader
     pico_time
     hardware_gpio
     hardware_uart
-    hardware_dma)
+    hardware_dma
+    pico_stdio_usb)

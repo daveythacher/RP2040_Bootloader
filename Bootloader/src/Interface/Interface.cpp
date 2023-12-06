@@ -1,18 +1,12 @@
 #include "hardware/flash.h"
 #include "Interface/Interface.h"
-#include "Interface/UART/UART.h"
 
 Interface::Interface() {
-
+    // TODO: Setup watchdog
 }
 
 Interface::~Interface() {
 
-}
-
-// TODO: Fix this
-Interface *Interface::create() {
-    return new UART();
 }
 
 void Interface::process() {

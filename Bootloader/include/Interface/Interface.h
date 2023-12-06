@@ -8,8 +8,6 @@ class Interface {
         Interface();
         virtual ~Interface();
 
-        static Interface *create();
-
         virtual void process();
         virtual bool enter(uint32_t *address) = 0;
     
