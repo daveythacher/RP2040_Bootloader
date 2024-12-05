@@ -16,4 +16,6 @@ You must replicate the runtime_init logic of the SDK. (See SDK pico_standard_lin
 * Flash and USB subsystem must be configured correctly before handing over to application. (This is a precedent of bootrom.)
 
 ### Recommended Requirements
-All versions of the bootloader should support picotool. This is done to allow the bootloader to be recovered.
+* All versions of the bootloader should support picotool. (This is done to allow the bootloader to be recovered.)
+* Self testing and configuration. (Not supported right now.)
+* Communication protocols. (Not supported right now.)
